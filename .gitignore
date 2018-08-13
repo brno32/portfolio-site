@@ -2,6 +2,7 @@
 __pycache__/
 /__pycache__
 __pycache__
+*settings.cpython-36.pyc
 *.py[cod]
 *$py.class
 
