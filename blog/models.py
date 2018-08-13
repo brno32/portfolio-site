@@ -28,7 +28,7 @@ class Blog(models.Model):
         return self.pub_date.strftime('%b %e, %Y')
 
     def formatted_body(self):
-        paragraph_array = self.body.split('.  ')
+        paragraph_array = self.body.split('  ')
 
         body_text = ""
 
