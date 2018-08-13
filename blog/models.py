@@ -35,5 +35,4 @@ class Blog(models.Model):
         for paragraph in paragraph_array:
             body_text += paragraph + '\n\n'
 
-        print(body_text)
         return body_text
