@@ -9,11 +9,16 @@
   <hr></hr>
 
   {% for blog in blogs reversed %}
-    <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>
-    {{ blog.pub_date_cleaned }}<br>
-    <a href="{% url 'detail' blog.id %}"><img class="img-fluid" src="{{blog.image.url}}" height="200" width="200"></img></a>
+    <a href="{% url 'detail' blog.id %}">
+      <h3>{{blog.title}}</h3>
+    </a>
 
-    <a href="{% url 'detail' blog.id %}"><p style="color: black">{{ blog.summary }}</p></a>
+    <!-- Users prefer everything wrapped in link, but turn off the fancy highlighting stuff -->
+    <a href="{% url 'detail' blog.id %}" style="text-decoration: none; color: black;">
+      {{ blog.pub_date_cleaned }}<br>
+      <img class="img-fluid" src="{{blog.image.url}}" height="200" width="200"></img>
+      <p>{{ blog.summary }}</p>
+    </a>
   {% endfor %}
 
 </div>

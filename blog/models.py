@@ -26,3 +26,14 @@ class Blog(models.Model):
 
     def pub_date_cleaned(self):
         return self.pub_date.strftime('%b %e, %Y')
+
+    def formatted_body(self):
+        paragraph_array = self.body.split('.  ')
+
+        body_text = ""
+
+        for paragraph in paragraph_array:
+            body_text += paragraph + '\n\n'
+
+        print(body_text)
+        return body_text

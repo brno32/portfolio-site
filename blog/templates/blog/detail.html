@@ -10,7 +10,7 @@
   <h5>{{ detail_blog.pub_date_cleaned }}</h5>
   <img class="img-fluid" src="{{detail_blog.image.url}}" height="400" width="400"></img>
     <div class="pt-3">
-      <p>{{ detail_blog.body }}</p>
+      <p>{{ detail_blog.formatted_body|linebreaksbr }}</p>
     </div>
 </div>
 {% endblock %}
