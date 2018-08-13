@@ -5,6 +5,7 @@ __pycache__
 *settings.cpython-36.pyc
 *.py[cod]
 *$py.class
+*.pyc
 
 /media
 /static

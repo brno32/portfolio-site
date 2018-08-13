@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+<div class="container bg-light">
 
-  <h1 class="text-center pt-2">My Blog</h1>
+  <h1 class="text-center pt-2">Blog</h1>
   <br>
-  <br>
-  <h2>Latest Posts</h2>
+  <h2 class="lead text-muted">Latest Posts</h2>
   <hr></hr>
 
-  {% for blog in blogs %}
+  {% for blog in blogs reversed %}
     <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>
     {{ blog.pub_date_cleaned }}<br>
     <img class="img-fluid" src="{{blog.image.url}}" height="200" width="200"></img>

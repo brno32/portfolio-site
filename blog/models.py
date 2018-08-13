@@ -12,7 +12,17 @@ class Blog(models.Model):
         return self.title
 
     def summary(self):
-        return self.body[:100]
+        word_array = self.body.split()
+
+        summary_text = ''
+        iteration = 0
+        for word in word_array:
+            if iteration > 30:
+                break
+            summary_text += word + ' '
+            iteration += 1
+
+        return summary_text + '(...)'
 
     def pub_date_cleaned(self):
         return self.pub_date.strftime('%b %e, %Y')
